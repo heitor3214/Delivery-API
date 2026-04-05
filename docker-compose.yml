@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_entrega
+    restart: always
+    environment:
+      POSTGRES_USER: heitor
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: api_entrega
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_entrega
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: heitor@teste.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+    ports:
+      - "8081:80" # Você vai acessar em localhost:8081
